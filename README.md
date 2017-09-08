@@ -8,27 +8,29 @@
 - 测试：完成点赞接口的自动化测试、点赞+1功能的自动化测试、真是页面的点击自动化测试
 
 ## 项目结构
-├── app.js (koa+ES6封装接口，并给出路由)
+├── LICENSE
+├── README.md
+├── app.js
 ├── package-lock.json
 ├── package.json
 ├── public
 │   └── index
 │       ├── css
-│       │   └── main.css(CSS文件)
+│       │   └── main.css
 │       ├── dist
-│       │   ├── index-es5.js(ES5 点赞+1)
-│       │   └── thumb-es5.js (ES5 实例化index.js)
+│       │   ├── index-es5.js
+│       │   └── thumb-es5.js
 │       └── js
-│           ├── connect-api.js (调用点赞接口文件)
-│           ├── index.js (ES6 点赞+1)
-│           └── thumb.js (ES6 实例化index.js)
+│           ├── connect-api.js
+│           ├── index.js
+│           └── thumb.js
 ├── server
-│   ├── db.php  (连接数据库)
-│   ├── get_count.php (请求当前点赞次数接口)
-│   └── post_count.php  (点赞接口)
+│   ├── db.php
+│   ├── get_count.php
+│   └── post_count.php
 ├── tree.txt
 └── views
-    └── index.html   (主页面)
+    └── index.html
     
 ## 下载
 #### 下载当前项目
