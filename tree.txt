@@ -1,0 +1,24 @@
+.
+├── app.js
+├── package-lock.json
+├── package.json
+├── public
+│   └── index
+│       ├── css
+│       │   └── main.css           <-- CSS文件
+│       ├── dist
+│       │   ├── index-es5.js       <-- ES5 点赞+1
+│       │   └── thumb-es5.js       <-- ES5 实例化index.js
+│       └── js
+│           ├── connect-api.js     <-- 调用点赞接口文件
+│           ├── index.js           <-- ES6 点赞+1
+│           └── thumb.js           <-- ES6 实例化index.js
+├── server
+│   ├── db.php                     <-- 连接数据库
+│   ├── get_count.php              <-- 请求当前点赞次数接口
+│   └── post_count.php             <-- 点赞接口
+├── tree.txt
+└── views
+    └── index.html                 <-- 主页面
+
+914 directories, 5972 files

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>praise点赞</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div>
+        当前已点赞:<span id="count"></span>次
+    </div>
+    <div class="hand" id="thumb">
+        <div class="finger thumb"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="arm"></div>
+    </div>
+    <span class="hide" id="animation">+1</span>
+
+    <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/systemjs/0.20.18/system.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/connect-api.js"></script>
+    <!-- <script src="./dist/thumb-es5.js"></script> -->
+    <script>
+        $(function() {
+            SystemJS.import('./dist/index-es5.js').then(function(m) {
+                // console.log(new m.default);
+                $.extend({
+                    thumb: m.default.Thumb
+                });
+                callBack();
+            });
+
+            function callBack() {
+                // 实例化组件
+                var run = new $.thumb(0, $('#thumb'));
+                run.clickAction();
+            }
+        })
+    </script>
+</body>
+
+</html>
