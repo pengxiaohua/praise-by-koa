@@ -8,20 +8,20 @@
 - 测试：完成点赞接口的自动化测试、点赞+1功能的自动化测试、真是页面的点击自动化测试
 
 ## 项目结构
-├── app.js                         <-- koa+ES6封装接口，并给出路由
+├── app.js <-- koa+ES6封装接口，并给出路由
 ├── package-lock.json
 ├── package.json
 ├── public
 │   └── index
 │       ├── css
-│       │   └── main.css           <-- CSS文件
+│       │   └── main.css  <-- CSS文件
 │       ├── dist
-│       │   ├── index-es5.js       <-- ES5 点赞+1
-│       │   └── thumb-es5.js       <-- ES5 实例化index.js
+│       │   ├── index-es5.js  <-- ES5 点赞+1
+│       │   └── thumb-es5.js  <-- ES5 实例化index.js
 │       └── js
-│           ├── connect-api.js     <-- 调用点赞接口文件
-│           ├── index.js           <-- ES6 点赞+1
-│           └── thumb.js           <-- ES6 实例化index.js
+│           ├── connect-api.js <-- 调用点赞接口文件
+│           ├── index.js <-- ES6 点赞+1
+│           └── thumb.js <-- ES6 实例化index.js
 ├── server
 │   ├── db.php                     <-- 连接数据库
 │   ├── get_count.php              <-- 请求当前点赞次数接口
@@ -52,7 +52,7 @@ localhost:8080
 ```('localhost','root','','praise',3506)```
 ##### 数据库名praise，接口3506，表名praise_count，2个字段‘id’和‘count’，id默认值为1，count默认值为0。
 
-##### 浏览器输入```http://localhost:8081/index/index```
+##### 浏览器输入 ````http://localhost:8081/index/index````
 
 
 
