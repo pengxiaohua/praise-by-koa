@@ -27,6 +27,9 @@
 │   ├── db.php                     <-- 连接数据库
 │   ├── get_count.php              <-- 请求当前点赞次数接口
 │   └── post_count.php             <-- 点赞接口
+├── test
+│   ├── e2e.js                     <-- 页面点击自动化测试
+│   └── geckodriver                <-- Firefox浏览器启动程序
 ├── tree.txt
 └── views
     └── index.html                 <-- 主页面
@@ -35,8 +38,8 @@
 ## 下载
 #### 下载当前项目
 ```shell
-git clone https://github.com/pengxiaohua/praise
-cd praise 
+git clone https://github.com/pengxiaohua/praise-by-koa
+cd praise-by-koa 
 ```
 
 ## 安装
@@ -51,10 +54,15 @@ npm install
 localhost:8080
 ```
 ##### MySQL数据库创建
-```('localhost','root','','praise',3506)```
+```shell
+('localhost','root','','praise',3506)
+```
 ##### 数据库名praise，接口3506，表名praise_count，2个字段‘id’和‘count’，id默认值为1，count默认值为0。
 
-##### 浏览器输入 ````http://localhost:8081/index/index````
+##### 浏览器输入 
+```shell
+http://localhost:8081/index/index
+```
 
 
 

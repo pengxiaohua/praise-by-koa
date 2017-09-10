@@ -1,24 +1,27 @@
 .
-├── app.js                         <-- koa和ES6封装php接口，给出路由
+├── LICENSE
+├── README.md
+├── app.js
 ├── package-lock.json
 ├── package.json
 ├── public
 │   └── index
 │       ├── css
-│       │   └── main.css           <-- CSS文件
+│       │   └── main.css
 │       ├── dist
-│       │   ├── index-es5.js       <-- ES5 点赞+1
-│       │   └── thumb-es5.js       <-- ES5 实例化index.js
+│       │   ├── index-es5.js
+│       │   └── thumb-es5.js
 │       └── js
-│           ├── connect-api.js     <-- axios调用点赞接口文件
-│           ├── index.js           <-- ES6 点赞+1
-│           └── thumb.js           <-- ES6 实例化index.js
+│           ├── connect-api.js
+│           ├── index.js
+│           └── thumb.js
 ├── server
-│   ├── db.php                     <-- 连接数据库
-│   ├── get_count.php              <-- 请求当前点赞次数接口
-│   └── post_count.php             <-- 点赞接口
+│   ├── db.php
+│   ├── get_count.php
+│   └── post_count.php
+├── test
+│   ├── e2e.js
+│   └── geckodriver
 ├── tree.txt
 └── views
-    └── index.html                 <-- 主页面
-
-914 directories, 5972 files
+    └── index.html
