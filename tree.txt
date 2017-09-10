@@ -1,5 +1,5 @@
 .
-├── app.js
+├── app.js                         <-- koa和ES6封装php接口，给出路由
 ├── package-lock.json
 ├── package.json
 ├── public
@@ -10,7 +10,7 @@
 │       │   ├── index-es5.js       <-- ES5 点赞+1
 │       │   └── thumb-es5.js       <-- ES5 实例化index.js
 │       └── js
-│           ├── connect-api.js     <-- 调用点赞接口文件
+│           ├── connect-api.js     <-- axios调用点赞接口文件
 │           ├── index.js           <-- ES6 点赞+1
 │           └── thumb.js           <-- ES6 实例化index.js
 ├── server
