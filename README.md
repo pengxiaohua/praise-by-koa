@@ -1,6 +1,6 @@
 # praise-by-koa
 
-##### 1、功能介绍
+### 1、功能介绍
 - 用PHP+MySQL完成点赞接口，实现用户点击一次更新数据库点赞总数+1
 - 用koa2+ES6封装PHP点赞接口，并建立路由。
 - 将[praise](https://github.com/pengxiaohua/praise)项目迁移进入koa2，通过index/index路由进行访问
@@ -8,7 +8,7 @@
 - 对用户连续点击事件进行稀释(或叫节流)
 - 基本测试：完成点赞接口的自动化测试(mocha)、点赞+1功能的自动化测试(karma)、真实页面的点击自动化测试(selenium-webdriver)
 
-##### 2、项目代码结构
+### 2、项目代码结构
 为了适配更多浏览器，代码中和.es6后缀的文件同名的.js文件是babel转码后的es5文件，这里省掉了对应的.js文件
 ```shell
 ├── app.es6                        <-- node启动页面
@@ -49,7 +49,7 @@
 **config**文件夹，存放的是配置端口号和文件名的代码
 **test**文件夹，存放的是测试代码
 
-##### 3、安装
+### 3、安装
 ###### ① clone the repo
 ```shell
 $ git clone https://github.com/pengxiaohua/news-responsive-by-react.git
@@ -60,7 +60,7 @@ $ cd news-responsive-by-react
 $ npm install
 ```
 
-##### 4、启动
+### 4、启动
 此项目在XAMPP环境下运行的php接口和数据库,开启Apache服务器
 ```shell
 localhost:8080
@@ -75,7 +75,7 @@ MySQL数据库创建：
 http://localhost:8081/index/index
 ```
 
-##### 5、测试
+### 5、测试
 ###### ① 点赞+1功能自动化测试
 ```shell
 karma start
