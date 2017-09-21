@@ -65,6 +65,8 @@
         };
     }();
 
+    var t = '';
+
     var PraiseButton = function () {
         function PraiseButton(num, element) {
             _classCallCheck(this, PraiseButton);
@@ -79,24 +81,35 @@
                 var _this = this;
 
                 this.element.click(function () {
-                    if (_this.num < 10) {
-                        _this.element.css('-webkit-filter', 'grayscale(0)');
-                        $('#animation').addClass('num');
-                        _this.num++;
-                        setTimeout(function () {
-                            $('#animation').removeClass('num');
-                        }, 1000);
-                    } else {
-                        _this.element.css('-webkit-filter', 'grayscale(1)');
-                        _this.num = 0;
+                    // 用setTimeout对点击事件稀释（或节流）
+                    if (t) {
+                        clearTimeout(t);
                     }
-                    console.log(_this.num);
+                    t = setTimeout(function () {
+                        if (_this.num < 10) {
+                            _this.element.css('-webkit-filter', 'grayscale(0)');
+                            $('#animation').addClass('num');
+                            _this.num = add(_this.num);
+                            setTimeout(function () {
+                                $('#animation').removeClass('num');
+                            }, 1000);
+                        } else {
+                            _this.element.css('-webkit-filter', 'grayscale(1)');
+                            _this.num = 0;
+                        }
+                        console.log('点赞次数：'+_this.num);
+                    }, 800);
                 });
             }
         }]);
 
         return PraiseButton;
     }();
+
+    //用作测试
+    function add(i) {
+        return i + 1;
+    }
 
     var Thumb = function (_PraiseButton) {
         _inherits(Thumb, _PraiseButton);

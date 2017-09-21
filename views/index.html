@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>praise点赞</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-
-<body>
-    <div>
+{% extends 'layout.html' %}
+{% block title %}praise点赞{% endblock %}
+{% block head %}
+{% parent %}
+    <link rel="stylesheet" href="../css/main.css">
+{% endblock %}
+{% block content %}
+    <div class="count-div">
         当前已点赞:<span id="count"></span>次
     </div>
     <div class="hand" id="thumb">
@@ -26,11 +21,11 @@
     <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/systemjs/0.20.18/system.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./js/connect-api.js"></script>
-    <!-- <script src="./dist/thumb-es5.js"></script> -->
+    <script src="../js/connect-api.js"></script>
+    <!-- <script src="../js/thumb.js"></script> -->
     <script>
         $(function() {
-            SystemJS.import('./dist/index-es5.js').then(function(m) {
+            SystemJS.import('../js/index.js').then(function(m) {
                 // console.log(new m.default);
                 $.extend({
                     thumb: m.default.Thumb
@@ -45,6 +40,4 @@
             }
         })
     </script>
-</body>
-
-</html>
+{% endblock %}

@@ -1,70 +1,59 @@
-/*
-koa2+ES6封装api
-*/
-const Koa = require('koa');
-const app = new Koa();
-const Router = require('koa-router');
-const router = new Router();
-const rp = require('request-promise');
-const convert = require('koa-convert');
-const path = require('path');
-const render = require('koa-swig');
-const co = require('co');
-const server = require('koa-static');
-const router2 = require('koa-simple-router');
-
-const Count={
-    postCount: async(app, ctx)=>{
-        let result = await rp('http://127.0.0.1:8080/praise-by-koa/server/post_count.php');
-        return result;
-        console.log(result);
-    },
-    getCount: async(app, ctx)=>{
-        let result = await rp('http://127.0.0.1:8080/praise-by-koa/server/get_count.php');
-        return result;
+(function (global, factory) {
+    if (typeof define === "function" && define.amd) {
+        define(['exports', 'koa', 'koa-simple-router', 'koa-swig', 'koa-static', 'co', './config/config', './controller/initController', 'babel-polyfill', 'babel-register'], factory);
+    } else if (typeof exports !== "undefined") {
+        factory(exports, require('koa'), require('koa-simple-router'), require('koa-swig'), require('koa-static'), require('co'), require('./config/config'), require('./controller/initController'), require('babel-polyfill'), require('babel-register'));
+    } else {
+        var mod = {
+            exports: {}
+        };
+        factory(mod.exports, global.koa, global.koaSimpleRouter, global.koaSwig, global.koaStatic, global.co, global.config, global.initController, global.babelPolyfill, global.babelRegister);
+        global.app = mod.exports;
     }
-}
+})(this, function (exports, _koa, _koaSimpleRouter, _koaSwig, _koaStatic, _co, _config, _initController) {
+    'use strict';
 
-router.all('/api/post_count',async (ctx, next)=>{
-    let result = await Count.postCount();
-    ctx.body = result;
-  });
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
 
-router.get('/api/get_count',async (ctx, next)=>{
-    let result = await Count.getCount();
-    ctx.body = result;
-});
+    var _koa2 = _interopRequireDefault(_koa);
 
-app.use(router.routes()).use(router.allowedMethods());
+    var _koaSimpleRouter2 = _interopRequireDefault(_koaSimpleRouter);
 
-// app.use(ctx =>{
-//     if (ctx.request.path === '/') {
-//         ctx.response.type = 'html';
-//         ctx.response.body = '<p>Hello world</p>';
-//       }else if(ctx.request.path === '/index/index'){
+    var _koaSwig2 = _interopRequireDefault(_koaSwig);
 
-//       }
-// });
+    var _koaStatic2 = _interopRequireDefault(_koaStatic);
 
-app.context.render = co.wrap(render({
-    root: path.join(__dirname,'./views'),
-    autoescape:true,
-    cache:'memory',
-    ext:'html',
-    writeBody: false
-}));
+    var _co2 = _interopRequireDefault(_co);
 
-app.use(router2(_=>{
-    _.get('/',(ctx,next)=>{
-        ctx.body = 'Hello world';
-    })
-    _.get('/index/index',async (ctx,next)=>{
-        ctx.body = await ctx.render('index.html');
-    })
-}))
+    var _config2 = _interopRequireDefault(_config);
 
-app.use(convert(server(path.join(__dirname,'./public'))))
+    var _initController2 = _interopRequireDefault(_initController);
 
-app.listen(8081, function() {
-    console.log('server is running!');
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    var app = new _koa2.default();
+
+    _initController2.default.init(app, _koaSimpleRouter2.default);
+
+    app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
+        root: _config2.default.get('viewsDir'),
+        autoescape: true,
+        cache: 'memory',
+        ext: 'html',
+        writeBody: false
+    }));
+
+    app.use((0, _koaStatic2.default)(_config2.default.get('staticDir')));
+
+    app.listen(_config2.default.get('port'), function () {
+        console.log('server is running!');
+    });
+
+    exports.default = app;
 });

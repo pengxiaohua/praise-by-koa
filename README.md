@@ -9,30 +9,35 @@
 
 ## 项目结构
 ```shell
-├── app.js                         <-- koa和ES6封装php接口，给出路由
-├── package-lock.json
-├── package.json
+├── app.es6                        <-- node启动页面
+├── config
+│   ├── config.es6                 <-- 配置端口号、文件名
+├── controller
+│   ├── indexController.es6        <-- 创建路由
+│   ├── initController.es6         <-- 分发路由
+├── karma.conf.js                  <-- karma配置文件
+├── models
+│   ├── model.es6                  <-- 后端php接口的封装
 ├── public
-│   └── index
-│       ├── css
-│       │   └── main.css           <-- CSS文件
-│       ├── dist
-│       │   ├── index-es5.js       <-- ES5 点赞+1
-│       │   └── thumb-es5.js       <-- ES5 实例化index.js
-│       └── js
-│           ├── connect-api.js     <-- axios调用点赞接口文件
-│           ├── index.js           <-- ES6 点赞+1
-│           └── thumb.js           <-- ES6 实例化index.js
+│   ├── css
+│   │   └── main.css               <-- css文件
+│   └── js
+│       ├── connect-api.es6        <-- axois连接koa点赞接口
+│       ├── index.es6              <-- 点赞+1
+│       ├── thumb.es6              <-- 实例化index.es6
 ├── server
-│   ├── db.php                     <-- 连接数据库
-│   ├── get_count.php              <-- 请求当前点赞次数接口
-│   └── post_count.php             <-- 点赞接口
+│   ├── db.php
+│   ├── get_count.php              <-- 获取当前点赞数原始php接口
+│   └── post_count.php             <-- 点赞+1原始php接口
 ├── test
-│   ├── e2e.js                     <-- 页面点击自动化测试
-│   └── geckodriver                <-- Firefox浏览器启动程序
-├── tree.txt
+│   ├── e2e.js                     <-- 端对端自动化测试
+│   ├── geckodriver                <-- 端对端自动化测试Firefox启动程序
+│   ├── index.spec.js              <-- 点赞+1功能自动化测试
+│   ├── server.es6                 <-- 点赞+1接口测试
 └── views
-    └── index.html                 <-- 主页面
+    ├── index.html                 <-- 主页面
+    └── layout.html                <-- 模板
+
 ```
     
 ## 下载

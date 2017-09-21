@@ -1,27 +1,28 @@
-.
-├── LICENSE
-├── README.md
-├── app.js
-├── package-lock.json
-├── package.json
+├── app.es6                        <-- node启动页面
+├── config
+│   ├── config.es6                 <-- 配置端口号、文件名
+├── controller
+│   ├── indexController.es6        <-- 创建路由
+│   ├── initController.es6         <-- 分发路由
+├── karma.conf.js                  <-- karma配置文件
+├── models
+│   ├── model.es6                  <-- 后端php接口的封装
 ├── public
-│   └── index
-│       ├── css
-│       │   └── main.css
-│       ├── dist
-│       │   ├── index-es5.js
-│       │   └── thumb-es5.js
-│       └── js
-│           ├── connect-api.js
-│           ├── index.js
-│           └── thumb.js
+│   ├── css
+│   │   └── main.css               <-- css文件
+│   └── js
+│       ├── connect-api.es6        <-- axois连接koa点赞接口
+│       ├── index.es6              <-- 点赞+1
+│       ├── thumb.es6              <-- 实例化index.es6
 ├── server
 │   ├── db.php
-│   ├── get_count.php
-│   └── post_count.php
+│   ├── get_count.php              <-- 获取当前点赞数原始php接口
+│   └── post_count.php             <-- 点赞+1原始php接口
 ├── test
-│   ├── e2e.js
-│   └── geckodriver
-├── tree.txt
+│   ├── e2e.js                     <-- 端对端自动化测试
+│   ├── geckodriver                <-- 端对端自动化测试Firefox启动程序
+│   ├── index.spec.js              <-- 点赞+1功能自动化测试
+│   ├── server.es6                 <-- 点赞+1接口测试
 └── views
-    └── index.html
+    ├── index.html                 <-- 主页面
+    └── layout.html                <-- 模板

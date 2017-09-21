@@ -11,9 +11,9 @@
         $sendData = array();
 
         $row = mysqli_fetch_assoc($result);
-        echo json_encode(array('count' => $row['count']));    //发送前端
+        echo json_encode(array('success' => true, 'count' => $row['count'],'msg'=>'666'));    //发送前端
     }else{
-        echo json_encode(array('连接信息' => '连接失败'));
+        echo json_encode(array('success' => false, 'msg'=>'444'));
     }
 
     mysqli_close($link);
