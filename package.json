@@ -22,7 +22,7 @@
     "supertest": "^3.0.0"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "co": "^4.6.0",
