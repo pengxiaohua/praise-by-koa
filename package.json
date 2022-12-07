@@ -16,7 +16,7 @@
     "koa-route": "^3.2.0",
     "koa-router": "^7.2.1",
     "mocha": "^3.5.3",
-    "qs": "^6.5.1",
+    "qs": "^6.5.3",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
     "supertest": "^3.0.0"
